@@ -1,6 +1,12 @@
 import banner1 from "../assets/banner--1.jpg";
 import banner2 from "../assets/banner--2.jpg";
 import banner3 from "../assets/banner--3.jpg";
+import fitness from "../assets/category/fitness.webp";
+import equipment from "../assets/category/Equipment.webp";
+import nutrition from "../assets/category/Nutrition & Supplements.jpg";
+import footwarel from "../assets/category/footwarel.jpg";
+import Apparel from "../assets/category/Apparel.avif";
+import { ICategory } from "../types/category";
 
 const banners = [
   {
@@ -26,4 +32,20 @@ const banners = [
   },
 ];
 
-export { banners };
+const categories: ICategory[] = [
+  { id: 1, name: "Footwear", image: footwarel },
+  { id: 2, name: "Apparel", image: Apparel },
+  { id: 3, name: "Equipment", image: equipment },
+  {
+    id: 4,
+    name: "Supplements",
+    image: nutrition,
+  },
+  {
+    id: 5,
+    name: "Fitness Accessories",
+    image: fitness,
+  },
+];
+
+export { banners, categories };
