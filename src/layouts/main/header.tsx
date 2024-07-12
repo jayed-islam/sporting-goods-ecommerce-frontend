@@ -4,8 +4,10 @@ import { navConfig } from "./config-navigation";
 import { paths } from "../paths";
 import { IconButton } from "@mui/material";
 import { BsCart4 } from "react-icons/bs";
+import { useAppSelector } from "@/redux/hooks";
 
 const Header = () => {
+  const { cartItems } = useAppSelector((state) => state.cart);
   return (
     <header className="bg-white">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 xl:px-0 mt-2">
@@ -36,8 +38,8 @@ const Header = () => {
 
           <div className="flex items-center gap-4">
             <div className="sm:flex sm:gap-4">
-              <div className="hidden sm:flex">
-                <NavLink to="/">
+              <div className="relative">
+                <NavLink to={paths.cart}>
                   <IconButton
                     sx={{
                       border: "1px solid #D97706",
@@ -46,6 +48,9 @@ const Header = () => {
                     <BsCart4 />
                   </IconButton>
                 </NavLink>
+                <div className="absolute top-0 right-0 w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center text-sm text-white">
+                  {cartItems.length}
+                </div>
               </div>
             </div>
 

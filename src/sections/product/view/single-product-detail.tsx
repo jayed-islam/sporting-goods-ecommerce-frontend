@@ -32,14 +32,16 @@ const SingleProductDetails = ({ id }: Props) => {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Product Image */}
-          <div className="flex justify-center">
+          <div className="flex justify-center relative group">
             <PhotoProvider>
               <PhotoView src={data?.data.image}>
-                <img src={data?.data.image} alt="" />
+                <img src={data?.data.image} alt="Product" className="w-full" />
               </PhotoView>
             </PhotoProvider>
+            <div className="absolute top-0 left-0 right-0 h-16 flex items-center justify-center bg-black bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer">
+              See In Photo View
+            </div>
           </div>
-
           {/* Product Details */}
           <div>
             <h2 className="text-3xl font-bold mb-4">{data?.data.name}</h2>
@@ -66,8 +68,15 @@ const SingleProductDetails = ({ id }: Props) => {
             <Button
               variant="contained"
               size="large"
-              className="bg-orange-600 text-white px-4 py-2 rounded-md shadow hover:bg-orange-700"
+              className=" text-white px-4 py-2 rounded-md"
               onClick={handleAddToCart}
+              sx={{
+                bgcolor: "#FACC15",
+                "&:hover": {
+                  bgcolor: "#EAB308",
+                },
+                textTransform: "capitalize",
+              }}
             >
               Add to Cart
             </Button>
