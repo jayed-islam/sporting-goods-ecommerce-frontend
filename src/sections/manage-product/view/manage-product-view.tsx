@@ -33,6 +33,7 @@ const ManageProductView: React.FC = () => {
 
   const { data, isFetching } = useGetProductListQuery(filters, {
     refetchOnMountOrArgChange: true,
+    pollingInterval: 30000,
   });
 
   const handleSort = () => {

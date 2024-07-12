@@ -37,7 +37,7 @@ const ProductTableRow = ({ product }: Props) => {
       </TableRow>
       <UpdateProductDialog dialog={updateDialog} initialValues={product} />
       <DeleteProductDialogFromShop
-        dialog={updateDialog}
+        dialog={deleteDialog}
         productId={product._id}
       />
     </>

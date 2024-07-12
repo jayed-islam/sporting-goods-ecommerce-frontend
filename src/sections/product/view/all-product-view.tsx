@@ -47,6 +47,7 @@ const AllProductView = ({ category: initialCategory }: Props) => {
 
   const { data, isFetching } = useGetProductListQuery(filters, {
     refetchOnMountOrArgChange: true,
+    pollingInterval: 30000,
   });
 
   const handleFilterChange = (

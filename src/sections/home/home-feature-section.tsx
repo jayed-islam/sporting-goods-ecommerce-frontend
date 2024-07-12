@@ -3,7 +3,10 @@ import ShimmerCard from "../../layouts/common/product-shimmer-card";
 import { useGetProductListQuery } from "../../redux/reducers/product/productApi";
 
 const HomeFeatureSection = () => {
-  const { data, isFetching } = useGetProductListQuery({ limit: 10, page: 1 });
+  const { data, isFetching } = useGetProductListQuery(
+    { limit: 10, page: 1 },
+    { pollingInterval: 30000 }
+  );
   return (
     <section className="py-12">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-0">
