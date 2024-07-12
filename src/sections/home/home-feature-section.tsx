@@ -1,4 +1,4 @@
-import ProductCard from "@/layouts/common/product-card";
+import ProductCard from "../../layouts/common/product-card";
 import ShimmerCard from "../../layouts/common/product-shimmer-card";
 import { useGetProductListQuery } from "../../redux/reducers/product/productApi";
 

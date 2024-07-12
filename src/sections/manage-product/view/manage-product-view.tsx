@@ -11,24 +11,24 @@ import {
   TableSortLabel,
   Paper,
 } from "@mui/material";
-import { useGetProductListQuery } from "@/redux/reducers/product/productApi";
 
 import TableShimmer from "../table-shimmer";
-import useBoolean from "@/hooks/use-boolean";
 import AddProductDialog from "../add-product-dialog";
 import ProductTableRow from "../table-row";
-import ScrollToTop from "@/hooks/use-scroll-to-top";
 import { orange } from "@mui/material/colors";
+import { useGetProductListQuery } from "../../../redux/reducers/product/productApi";
+import useBoolean from "../../../hooks/use-boolean";
+import ScrollToTop from "../../../hooks/use-scroll-to-top";
 
 interface FilterState {
   limit: number;
   page: number;
-  sort: "asc" | "desc";
+  sort: "asc" | "desc" | undefined;
 }
 
 const ManageProductView: React.FC = () => {
   const [filters, setFilters] = useState<FilterState>({
-    sort: "asc",
+    sort: undefined,
     limit: 10,
     page: 1,
   });
@@ -45,7 +45,7 @@ const ManageProductView: React.FC = () => {
     }));
   };
 
-  const handleChangePage = (event: unknown, newPage: number) => {
+  const handleChangePage = (_event: unknown, newPage: number) => {
     setFilters((prevFilters) => ({
       ...prevFilters,
       page: newPage + 1,

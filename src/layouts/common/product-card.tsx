@@ -1,5 +1,5 @@
 import React from "react";
-import Rating from "react-rating";
+// import Rating from "react-rating";
 import { IProduct } from "../../types/product";
 import { NavLink } from "react-router-dom";
 import { paths } from "../paths";
@@ -70,7 +70,8 @@ const ProductCard: React.FC<Props> = ({ product }) => {
         </div>
 
         <div className="flex items-center text-xs mt-3">
-          <Rating initialRating={rating}></Rating>
+          {/* <Rating initialRating={rating}></Rating> */}
+          Rating: {rating}
         </div>
 
         <p className="text-xs line-clamp-3 overflow-ellipsis text-gray-700 mt-3 h-9">

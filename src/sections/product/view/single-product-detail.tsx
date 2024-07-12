@@ -1,15 +1,14 @@
-import { useGetProductByIdQuery } from "@/redux/reducers/product/productApi";
-import Rating from "react-rating";
+// import Rating from "react-rating";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
 import { Button } from "@mui/material";
-import { useAppDispatch } from "@/redux/hooks";
-import { addProduct } from "@/redux/reducers/cart/cartSlice";
-import { IProduct } from "@/types/product";
-
-import ScrollToTop from "@/hooks/use-scroll-to-top";
-import { handleScrollToTop } from "@/hooks/handle-scroll-to-top";
 import { orange } from "@mui/material/colors";
+import { useGetProductByIdQuery } from "../../../redux/reducers/product/productApi";
+import { useAppDispatch } from "../../../redux/hooks";
+import { addProduct } from "../../../redux/reducers/cart/cartSlice";
+import { handleScrollToTop } from "../../../hooks/handle-scroll-to-top";
+import { IProduct } from "../../../types/product";
+import ScrollToTop from "../../../hooks/use-scroll-to-top";
 
 interface Props {
   id: string;
@@ -57,7 +56,8 @@ const SingleProductDetails = ({ id }: Props) => {
 
             {/* Rating */}
             <div className="mb-4">
-              <Rating initialRating={data?.data.rating} />
+              {/* <Rating initialRating={data?.data.rating} /> */}
+              Rading: {data?.data.rating}
             </div>
 
             {/* Description */}

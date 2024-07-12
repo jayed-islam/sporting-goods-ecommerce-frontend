@@ -1,13 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layouts/main";
 import HomePage from "../pages/home/home";
-import AllProductPage from "@/pages/product/all-product";
-import SingleProductDetailsPage from "@/pages/product/single-product";
-import CartPage from "@/pages/cart/cart";
-import CheckoutPage from "@/pages/checkout/checkout";
-import SuccessPage from "@/pages/success/page";
-import ManageProducPage from "@/pages/manage-product/manage-product";
-import AboutUsPage from "@/pages/about-us/about-us";
+import AllProductPage from "../pages/product/all-product";
+import SingleProductDetailsPage from "../pages/product/single-product";
+import CartPage from "../pages/cart/cart";
+import CheckoutPage from "../pages/checkout/checkout";
+import SuccessPage from "../pages/success/page";
+import ManageProducPage from "../pages/manage-product/manage-product";
+import AboutUsPage from "../pages/about-us/about-us";
 
 const routes = createBrowserRouter([
   {

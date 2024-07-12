@@ -1,10 +1,10 @@
 import React from "react";
 import { Container, Typography, Button } from "@mui/material";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
-import ScrollToTop from "@/hooks/use-scroll-to-top";
 import { orange } from "@mui/material/colors";
 import { NavLink } from "react-router-dom";
-import { paths } from "@/layouts/paths";
+import { paths } from "../../layouts/paths";
+import ScrollToTop from "../../hooks/use-scroll-to-top";
 
 const SuccessViewPage: React.FC = () => {
   return (

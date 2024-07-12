@@ -1,15 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { paths } from "@/layouts/paths";
-import { useAppSelector } from "@/redux/hooks";
-import {
-  selectIsCartInStock,
-  selectTotalItems,
-  selectTotalWithVAT,
-} from "@/redux/reducers/cart/cartSlice";
+
 import { LoadingButton } from "@mui/lab";
 import { Button, Divider, Typography } from "@mui/material";
 import { orange } from "@mui/material/colors";
 import { useNavigate } from "react-router-dom";
+import { useAppSelector } from "../../../redux/hooks";
+import {
+  selectIsCartInStock,
+  selectTotalItems,
+  selectTotalWithVAT,
+} from "../../../redux/reducers/cart/cartSlice";
+import { paths } from "../../../layouts/paths";
 
 interface Props {
   isSubmit?: boolean;

@@ -1,10 +1,10 @@
-import { IProduct } from "@/types/product";
 import { IconButton, TableCell, TableRow, Typography } from "@mui/material";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { TiEdit } from "react-icons/ti";
 import UpdateProductDialog from "./update-product-dialog";
-import useBoolean from "@/hooks/use-boolean";
 import DeleteProductDialogFromShop from "./delete-product-fromshop-dialog";
+import useBoolean from "../../hooks/use-boolean";
+import { IProduct } from "../../types/product";
 
 interface Props {
   product: IProduct;

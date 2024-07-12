@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-import { useGetProductListQuery } from "@/redux/reducers/product/productApi";
-import ShimmerCard from "@/layouts/common/product-shimmer-card";
-import ProductCard from "@/layouts/common/product-card";
 import {
   Box,
   Button,
@@ -17,8 +14,12 @@ import {
   TextField,
 } from "@mui/material";
 import EmptyComponent from "../common/empty-data-component";
-import ScrollToTop from "@/hooks/use-scroll-to-top";
 import { orange } from "@mui/material/colors";
+import { useGetProductListQuery } from "../../../redux/reducers/product/productApi";
+import { handleScrollToTop } from "../../../hooks/handle-scroll-to-top";
+import ScrollToTop from "../../../hooks/use-scroll-to-top";
+import ShimmerCard from "../../../layouts/common/product-shimmer-card";
+import ProductCard from "../../../layouts/common/product-card";
 
 interface Props {
   category?: string;
@@ -27,7 +28,7 @@ interface Props {
 interface FilterState {
   category: string;
   search: string;
-  sort: "asc" | "desc";
+  sort: "asc" | "desc" | undefined;
   limit: number;
   page: number;
   brand: string[];
@@ -39,7 +40,7 @@ const AllProductView = ({ category: initialCategory }: Props) => {
   const [filters, setFilters] = useState<FilterState>({
     category: initialCategory as string,
     search: "",
-    sort: "asc",
+    sort: undefined,
     limit: 10,
     page: 1,
     brand: [],
@@ -66,7 +67,7 @@ const AllProductView = ({ category: initialCategory }: Props) => {
     setFilters({
       category: "",
       search: "",
-      sort: "asc",
+      sort: undefined,
       limit: 10,
       page: 1,
       brand: [],
@@ -83,6 +84,17 @@ const AllProductView = ({ category: initialCategory }: Props) => {
         : [...prevFilters.brand, brand];
       return { ...prevFilters, brand: newBrands };
     });
+  };
+
+  const handlePageChange = (
+    _event: React.ChangeEvent<unknown>,
+    value: number
+  ) => {
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      page: value,
+    }));
+    handleScrollToTop();
   };
 
   return (
@@ -222,7 +234,7 @@ const AllProductView = ({ category: initialCategory }: Props) => {
                 <label>Price Range</label>
                 <Slider
                   value={filters.priceRange}
-                  onChange={(e, newValue) =>
+                  onChange={(_e, newValue) =>
                     handleFilterChange("priceRange", newValue as number[])
                   }
                   valueLabelDisplay="auto"
@@ -270,6 +282,8 @@ const AllProductView = ({ category: initialCategory }: Props) => {
         <div className="flex items-center justify-center bg-white">
           <Pagination
             count={data?.data.pagination.totalPages}
+            page={filters.page}
+            onChange={handlePageChange}
             showFirstButton
             showLastButton
           />

@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
-import AllProductView from "@/sections/product/view/all-product-view";
 import { useLocation } from "react-router-dom";
+import AllProductView from "../../sections/product/view/all-product-view";
 
 export default function AllProductPage() {
   const location = useLocation();

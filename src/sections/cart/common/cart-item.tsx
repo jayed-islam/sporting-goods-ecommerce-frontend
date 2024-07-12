@@ -1,14 +1,14 @@
-import {
-  ICartItem,
-  updateProductQuantity,
-} from "@/redux/reducers/cart/cartSlice";
 import { IconButton } from "@mui/material";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { GoPlus } from "react-icons/go";
-import { useAppDispatch } from "@/redux/hooks";
 import { FiMinus } from "react-icons/fi";
 import DeleteProductDialog from "./delete-dialog";
-import useBoolean from "@/hooks/use-boolean";
+import {
+  ICartItem,
+  updateProductQuantity,
+} from "../../../redux/reducers/cart/cartSlice";
+import { useAppDispatch } from "../../../redux/hooks";
+import useBoolean from "../../../hooks/use-boolean";
 
 interface Props {
   item: ICartItem;

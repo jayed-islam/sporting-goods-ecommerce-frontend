@@ -1,7 +1,9 @@
-import { RootState } from "@/redux/store";
-import { IProduct } from "@/types/product";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { PayloadAction, createSelector, createSlice } from "@reduxjs/toolkit";
 import toast from "react-hot-toast";
+import { IProduct } from "../../../types/product";
+import { RootState } from "../../store";
 
 export interface ICartItem {
   product: IProduct;
@@ -79,10 +81,10 @@ export default cartSlice.reducer;
 export const selectProducts = (state: RootState) => state.cart.cartItems;
 
 export const selectSubtotal = createSelector(
-  (state: RootState) => state.cart.cartItems,
+  (state: any) => state.cart.cartItems,
   (cartItems) =>
     cartItems.reduce(
-      (total, item) => total + item.product.price * item.quantity,
+      (total: any, item: any) => total + item.product.price * item.quantity,
       0
     )
 );
@@ -98,13 +100,13 @@ export const selectTotalWithVAT = createSelector(selectSubtotal, (subtotal) => {
 });
 
 export const selectTotalItems = createSelector(
-  (state: RootState) => state.cart.cartItems,
+  (state: any) => state.cart.cartItems,
   (cartItems) =>
-    cartItems.reduce((total, product) => total + product.quantity, 0)
+    cartItems.reduce((total: any, product: any) => total + product.quantity, 0)
 );
 
 export const selectShippingFee = createSelector(
-  (state: RootState) => state.cart.selectedDistrict,
+  (state: any) => state.cart.selectedDistrict,
   (district) => (district === "1" ? 71 : 110)
 );
 

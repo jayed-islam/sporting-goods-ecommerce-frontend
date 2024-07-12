@@ -6,9 +6,9 @@ import {
   DialogContentText,
   DialogTitle,
 } from "@mui/material";
-import { BooleanState } from "@/types/utils";
-import { useAppDispatch } from "@/redux/hooks";
-import { deleteProduct } from "@/redux/reducers/cart/cartSlice";
+import { BooleanState } from "../../../types/utils";
+import { useAppDispatch } from "../../../redux/hooks";
+import { deleteProduct } from "../../../redux/reducers/cart/cartSlice";
 
 interface Props {
   dialog: BooleanState;

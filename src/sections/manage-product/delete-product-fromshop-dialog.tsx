@@ -7,10 +7,10 @@ import {
   DialogContentText,
   DialogTitle,
 } from "@mui/material";
-import { BooleanState } from "@/types/utils";
-import { useDeleteProductMutation } from "@/redux/reducers/product/productApi";
 import toast from "react-hot-toast";
 import { LoadingButton } from "@mui/lab";
+import { BooleanState } from "../../types/utils";
+import { useDeleteProductMutation } from "../../redux/reducers/product/productApi";
 
 interface Props {
   dialog: BooleanState;

@@ -2,16 +2,15 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { schema } from "../validation";
-import FormProvider from "@/components/hook-form/hook-form-provider";
-import RHFTextField from "@/components/hook-form/text-filed";
-import OrderSummary from "@/sections/cart/common/order-summery";
 import { FormControlLabel, Radio, RadioGroup } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { useAppSelector } from "@/redux/hooks";
 import toast from "react-hot-toast";
-import { useUpdateProductStockMutation } from "@/redux/reducers/product/productApi";
-import ScrollToTop from "@/hooks/use-scroll-to-top";
-
+import { useAppSelector } from "../../../redux/hooks";
+import { useUpdateProductStockMutation } from "../../../redux/reducers/product/productApi";
+import ScrollToTop from "../../../hooks/use-scroll-to-top";
+import FormProvider from "../../../components/hook-form/hook-form-provider";
+import RHFTextField from "../../../components/hook-form/text-filed";
+import OrderSummary from "../../cart/common/order-summery";
 interface FormData {
   name: string;
   email: string;

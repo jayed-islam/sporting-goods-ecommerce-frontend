@@ -1,7 +1,7 @@
 "use client";
 
-import { BooleanState } from "@/types/utils";
 import { useCallback, useState } from "react";
+import { BooleanState } from "../types/utils";
 
 const useBoolean = (initialValue?: boolean): BooleanState => {
   const [value, setValue] = useState(!!initialValue);

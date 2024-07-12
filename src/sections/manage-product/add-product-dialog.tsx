@@ -7,19 +7,19 @@ import {
   DialogTitle,
   Button,
 } from "@mui/material";
-import { BooleanState } from "@/types/utils";
-import FormProvider from "@/components/hook-form/hook-form-provider";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ProductFormData, productFormSchema } from "./validation";
-import RHFTextField from "@/components/hook-form/text-filed";
-import RHFSelect from "@/components/hook-form/select-field";
-import { categories } from "@/constants";
-import { ICategory } from "@/types/category";
 import { LoadingButton } from "@mui/lab";
-import { useCreateProductMutation } from "@/redux/reducers/product/productApi";
-import { IProduct } from "@/types/product";
 import toast from "react-hot-toast";
+import { BooleanState } from "../../types/utils";
+import { useCreateProductMutation } from "../../redux/reducers/product/productApi";
+import { IProduct } from "../../types/product";
+import FormProvider from "../../components/hook-form/hook-form-provider";
+import RHFTextField from "../../components/hook-form/text-filed";
+import RHFSelect from "../../components/hook-form/select-field";
+import { categories } from "../../constants";
+import { ICategory } from "../../types/category";
 
 interface AddProductProps {
   dialog: BooleanState;

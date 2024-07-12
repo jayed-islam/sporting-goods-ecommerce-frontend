@@ -1,9 +1,9 @@
-import ScrollToTop from "@/hooks/use-scroll-to-top";
 import { Grid, Typography } from "@mui/material";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { GoGlobe } from "react-icons/go";
 import { IoLogoGithub } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
+import ScrollToTop from "../../hooks/use-scroll-to-top";
 
 const AboutPage = () => {
   const socialLinks = [

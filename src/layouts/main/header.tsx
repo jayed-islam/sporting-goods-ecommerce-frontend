@@ -4,9 +4,10 @@ import { navConfig } from "./config-navigation";
 import { paths } from "../paths";
 import { IconButton } from "@mui/material";
 import { BsCart4 } from "react-icons/bs";
-import { useAppSelector } from "@/redux/hooks";
 import { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
+import { useAppSelector } from "../../redux/hooks";
+// import { useAppSelector } from "src/redux/hooks";
 
 const Header = () => {
   const { cartItems } = useAppSelector((state) => state.cart);

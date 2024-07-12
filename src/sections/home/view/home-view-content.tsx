@@ -1,4 +1,4 @@
-import ScrollToTop from "@/hooks/use-scroll-to-top";
+import ScrollToTop from "../../../hooks/use-scroll-to-top";
 import HomeCategorySection from "../home-category-section";
 import HomeContactView from "../home-contact-view";
 import HomeFeatureSection from "../home-feature-section";

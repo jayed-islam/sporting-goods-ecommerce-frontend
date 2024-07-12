@@ -1,11 +1,11 @@
-import { useAppSelector } from "@/redux/hooks";
 import { Typography } from "@mui/material";
 import OrderSummary from "../common/order-summery";
 
 import CartItem from "../common/cart-item";
 import { NavLink } from "react-router-dom";
-import { paths } from "@/layouts/paths";
-import ScrollToTop from "@/hooks/use-scroll-to-top";
+import ScrollToTop from "../../../hooks/use-scroll-to-top";
+import { useAppSelector } from "../../../redux/hooks";
+import { paths } from "../../../layouts/paths";
 
 const CartView = () => {
   const { cartItems } = useAppSelector((state) => state.cart);
