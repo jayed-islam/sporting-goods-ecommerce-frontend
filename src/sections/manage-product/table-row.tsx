@@ -1,5 +1,5 @@
 import { IProduct } from "@/types/product";
-import { IconButton, TableCell, TableRow } from "@mui/material";
+import { IconButton, TableCell, TableRow, Typography } from "@mui/material";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { TiEdit } from "react-icons/ti";
 import UpdateProductDialog from "./update-product-dialog";
@@ -16,7 +16,12 @@ const ProductTableRow = ({ product }: Props) => {
   return (
     <>
       <TableRow key={product._id}>
-        <TableCell>{product.name}</TableCell>
+        <TableCell className="flex">
+          <div className="flex items-center gap-3">
+            <img src={product.image} className="w-11" alt="" />
+            <Typography>{product.name}</Typography>
+          </div>
+        </TableCell>
         <TableCell>{product.brand}</TableCell>
         <TableCell>{product.price}</TableCell>
         <TableCell>{product.category}</TableCell>

@@ -8,6 +8,7 @@ import {
 } from "@/redux/reducers/cart/cartSlice";
 import { LoadingButton } from "@mui/lab";
 import { Button, Divider, Typography } from "@mui/material";
+import { orange } from "@mui/material/colors";
 import { useNavigate } from "react-router-dom";
 
 interface Props {
@@ -63,9 +64,9 @@ const OrderSummary = ({ isSubmit, isLoading }: Props) => {
             loading={isLoading}
             disabled={cartItems.length === 0}
             sx={{
-              bgcolor: "#FACC15",
+              bgcolor: orange[500],
               "&:hover": {
-                bgcolor: "#EAB308",
+                bgcolor: orange[600],
               },
               textTransform: "capitalize",
             }}
@@ -80,9 +81,9 @@ const OrderSummary = ({ isSubmit, isLoading }: Props) => {
             disabled={!isCartInStock || cartItems.length === 0}
             onClick={handleNavigate}
             sx={{
-              bgcolor: "#FACC15",
+              bgcolor: orange[500],
               "&:hover": {
-                bgcolor: "#EAB308",
+                bgcolor: orange[600],
               },
               textTransform: "capitalize",
             }}

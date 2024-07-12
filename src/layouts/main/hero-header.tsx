@@ -26,6 +26,7 @@ const HeroHeader = () => {
       ),
     },
   ];
+
   return (
     <div className="w-full bg-slate-800">
       <div className="flex items-center justify-center sm:justify-between px-5 sm:px-20 md:px-11 lg:px-5 xl:px-0 max-w-5xl mx-auto">

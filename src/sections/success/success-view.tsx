@@ -1,6 +1,10 @@
 import React from "react";
 import { Container, Typography, Button } from "@mui/material";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
+import ScrollToTop from "@/hooks/use-scroll-to-top";
+import { orange } from "@mui/material/colors";
+import { NavLink } from "react-router-dom";
+import { paths } from "@/layouts/paths";
 
 const SuccessViewPage: React.FC = () => {
   return (
@@ -9,12 +13,14 @@ const SuccessViewPage: React.FC = () => {
       style={{
         textAlign: "center",
         marginTop: "50px",
+        marginBottom: "50px",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
       }}
     >
+      <ScrollToTop />
       <IoMdCheckmarkCircleOutline
         style={{ fontSize: "64px", color: "#4caf50" }}
       />
@@ -24,9 +30,20 @@ const SuccessViewPage: React.FC = () => {
       <Typography variant="body1" style={{ marginBottom: "20px" }}>
         Thank you for your order. Your order has been placed successfully.
       </Typography>
-      <Button variant="contained" color="primary" href="/">
-        Go to Home
-      </Button>
+      <NavLink to={paths.root}>
+        <Button
+          variant="contained"
+          color="primary"
+          sx={{
+            bgcolor: orange[500],
+            "&:hover": {
+              bgcolor: orange[600],
+            },
+          }}
+        >
+          Go to Home
+        </Button>
+      </NavLink>
     </Container>
   );
 };

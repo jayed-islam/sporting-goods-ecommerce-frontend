@@ -17,6 +17,8 @@ import {
   TextField,
 } from "@mui/material";
 import EmptyComponent from "../common/empty-data-component";
+import ScrollToTop from "@/hooks/use-scroll-to-top";
+import { orange } from "@mui/material/colors";
 
 interface Props {
   category?: string;
@@ -85,6 +87,7 @@ const AllProductView = ({ category: initialCategory }: Props) => {
 
   return (
     <div className="bg-gray-100">
+      <ScrollToTop />
       <div className="max-w-5xl mx-auto px-5 xl:px-0 py-9 md:py-11">
         <div className="mb-7">
           <div className="flex items-center flex-col lg:flex-row gap-3">
@@ -226,6 +229,7 @@ const AllProductView = ({ category: initialCategory }: Props) => {
                   min={0}
                   max={1000}
                   step={10}
+                  color="warning"
                 />
               </div>
               <Button
@@ -235,6 +239,10 @@ const AllProductView = ({ category: initialCategory }: Props) => {
                   textTransform: "capitalize",
                   fontSize: "0.7rem",
                   whiteSpace: "nowrap",
+                  bgcolor: orange[500],
+                  "&:hover": {
+                    bgcolor: orange[600],
+                  },
                 }}
               >
                 Clear Filters

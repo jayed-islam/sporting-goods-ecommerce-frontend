@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "@/redux/hooks";
 import toast from "react-hot-toast";
 import { useUpdateProductStockMutation } from "@/redux/reducers/product/productApi";
+import ScrollToTop from "@/hooks/use-scroll-to-top";
 
 interface FormData {
   name: string;
@@ -54,6 +55,7 @@ const CheckoutView = () => {
 
   return (
     <div className="max-w-5xl mx-auto my-11 px-5 xl:px-0">
+      <ScrollToTop />
       <FormProvider methods={methods} onSubmit={onSubmit}>
         <h2 className="text-3xl font-semibold mb-2">Checkout</h2>
         <h2 className="text-lg mb-5">Add your Information to make order</h2>

@@ -5,12 +5,14 @@ import OrderSummary from "../common/order-summery";
 import CartItem from "../common/cart-item";
 import { NavLink } from "react-router-dom";
 import { paths } from "@/layouts/paths";
+import ScrollToTop from "@/hooks/use-scroll-to-top";
 
 const CartView = () => {
   const { cartItems } = useAppSelector((state) => state.cart);
 
   return (
     <div className="bg-gray-100 py-11">
+      <ScrollToTop />
       <div className="max-w-5xl mx-auto px-5 xl:px-0">
         <Typography variant="h4" gutterBottom>
           Your Cart

@@ -6,7 +6,10 @@ import { Button } from "@mui/material";
 import { useAppDispatch } from "@/redux/hooks";
 import { addProduct } from "@/redux/reducers/cart/cartSlice";
 import { IProduct } from "@/types/product";
-import { handleScrollToTop } from "@/hooks/handleScrollTotop";
+
+import ScrollToTop from "@/hooks/use-scroll-to-top";
+import { handleScrollToTop } from "@/hooks/handle-scroll-to-top";
+import { orange } from "@mui/material/colors";
 
 interface Props {
   id: string;
@@ -23,6 +26,7 @@ const SingleProductDetails = ({ id }: Props) => {
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-8">
+      <ScrollToTop />
       {isFetching ? (
         <div className="min-w-[31rem] h-screen shadow-sm border justify-center flex items-center">
           <h3 className="text-3xl md:text-5xl font-bold text-center">
@@ -71,9 +75,9 @@ const SingleProductDetails = ({ id }: Props) => {
               className=" text-white px-4 py-2 rounded-md"
               onClick={handleAddToCart}
               sx={{
-                bgcolor: "#FACC15",
+                bgcolor: orange[500],
                 "&:hover": {
-                  bgcolor: "#EAB308",
+                  bgcolor: orange[600],
                 },
                 textTransform: "capitalize",
               }}

@@ -49,7 +49,7 @@ const ProductCard: React.FC<Props> = ({ product }) => {
       </div>
       <div className="relative border border-gray-100 bg-white p-6">
         <div className="flex items-center justify-between">
-          <div className="whitespace-nowrap bg-yellow-400 px-3 py-1.5 text-xs font-medium">
+          <div className="whitespace-nowrap bg-orange-400 px-3 py-1.5 text-xs font-medium text-white">
             {brand}
           </div>
 
@@ -73,13 +73,13 @@ const ProductCard: React.FC<Props> = ({ product }) => {
           <Rating initialRating={rating}></Rating>
         </div>
 
-        <p className="text-xs line-clamp-3 overflow-ellipsis text-gray-700 mt-3">
+        <p className="text-xs line-clamp-3 overflow-ellipsis text-gray-700 mt-3 h-9">
           {description}
         </p>
 
         <div className="mt-4">
           <NavLink to={`${paths.product}/${_id}`}>
-            <button className="block w-full rounded bg-yellow-400 p-4 text-sm font-medium transition hover:scale-105">
+            <button className="block w-full rounded bg-orange-500 p-4 text-sm font-medium transition hover:scale-105 text-white">
               View Details
             </button>
           </NavLink>

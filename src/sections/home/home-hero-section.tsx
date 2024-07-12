@@ -21,15 +21,12 @@ const HomeHeroSection = () => {
         {banners.map((banner, index) => (
           <div
             key={index}
-            className="flex items-center justify-center w-full h-52 sm:h-72 md:h-[400px] lg:h-[491px] relative lg:rounded-2xl bg-gray-300"
+            className="flex items-center justify-center w-full h-52 sm:h-72 md:h-[400px] lg:h-[491px] relative bg-gray-300"
           >
-            <img
-              src={banner.imgPath}
-              className="w-full h-full object-cover lg:rounded-2xl "
-            />
+            <img src={banner.imgPath} className="w-full h-full object-cover" />
             <div className="absolute inset-0 left-5 right-5 flex items-center justify-between z-20">
               <button
-                className="text-white h-11 flex items-center justify-center w-11 bg-black bg-opacity-50 rounded-full hover:text-orange-600 transition-all duration-150"
+                className="text-white h-11 flex items-center justify-center w-11 bg-black bg-opacity-50 rounded-full hover:text-orange-600 transition-all duration-150 "
                 onClick={previous}
               >
                 <IoChevronBack className="text-3xl" />
@@ -41,7 +38,7 @@ const HomeHeroSection = () => {
                 <GrNext className="text-3xl" />
               </button>
             </div>
-            <div className="absolute bottom-5 left-5 bg-black bg-opacity-50 text-white p-3 rounded-lg z-30 max-w-xs">
+            <div className="absolute bottom-5 left-5 bg-black bg-opacity-50 text-white p-3 rounded-lg z-30 max-w-xs hidden md:block">
               <h2 className="text-lg font-bold">{banner.title}</h2>
               <p className="text-sm">{banner.discountMessage}</p>
               <p className="text-sm mt-2">{banner.description}</p>

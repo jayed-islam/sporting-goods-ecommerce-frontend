@@ -7,6 +7,7 @@ import CartPage from "@/pages/cart/cart";
 import CheckoutPage from "@/pages/checkout/checkout";
 import SuccessPage from "@/pages/success/page";
 import ManageProducPage from "@/pages/manage-product/manage-product";
+import AboutUsPage from "@/pages/about-us/about-us";
 
 const routes = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const routes = createBrowserRouter([
       {
         path: "/manage-products",
         element: <ManageProducPage />,
+      },
+      {
+        path: "/about-us",
+        element: <AboutUsPage />,
       },
     ],
   },

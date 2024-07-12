@@ -17,6 +17,8 @@ import TableShimmer from "../table-shimmer";
 import useBoolean from "@/hooks/use-boolean";
 import AddProductDialog from "../add-product-dialog";
 import ProductTableRow from "../table-row";
+import ScrollToTop from "@/hooks/use-scroll-to-top";
+import { orange } from "@mui/material/colors";
 
 interface FilterState {
   limit: number;
@@ -64,6 +66,7 @@ const ManageProductView: React.FC = () => {
 
   return (
     <div className="bg-gray-100">
+      <ScrollToTop />
       <div className="max-w-5xl mx-auto px-5 xl:px-0 py-11">
         <div className="md:flex items-center justify-between">
           <div>
@@ -76,9 +79,9 @@ const ManageProductView: React.FC = () => {
             onClick={addDialog.setTrue}
             variant="contained"
             sx={{
-              bgcolor: "#FACC15",
+              bgcolor: orange[500],
               "&:hover": {
-                bgcolor: "#EAB308",
+                bgcolor: orange[600],
               },
               textTransform: "capitalize",
             }}
@@ -87,7 +90,14 @@ const ManageProductView: React.FC = () => {
           </Button>
         </div>
 
-        <Paper>
+        <Paper
+          sx={{
+            mt: {
+              xs: 5,
+              md: 0,
+            },
+          }}
+        >
           <TableContainer>
             <Table>
               <TableHead>
