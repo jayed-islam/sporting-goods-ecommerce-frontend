@@ -11,10 +11,11 @@ The Fantasy Sports is an e-commerce platform designed to cater to athletes, spor
 ## Features
 
 - **Product Categories:** Browse products categorized by sports types such as soccer, basketball, tennis, and more.
+- **Product Highly Filtering:** Browse products categorized by sports types such as soccer, basketball, tennis, and more.
 - **Product Details:** View detailed descriptions, specifications, and images of each product.
-- **Shopping Cart:** Add products to a cart for easy checkout and purchase.
-- **Order Management:** Track orders, manage shipping details, and view order history.
-- **Search Functionality:** Search for specific products by name, category, brand, or keyword.
+- **Shopping Cart:** Add products to a cart for easy checkout.
+- **Order Management:** Can create order and update product stock.
+- **Search Functionality:** Search for specific products by name, category.
 - **Responsive Design:** Optimized for desktop, tablet, and mobile devices for a seamless user experience.
 
 ## Technology Stack
@@ -44,6 +45,7 @@ Before you begin, ensure you have installed:
    git clone https://github.com/jayed-islam/sporting-goods-ecommerce-frontend
    cd sporting-goods-ecommerce-frontend
    npm install
+   npm run dev
    ```
 
 ### Configuration
@@ -53,4 +55,24 @@ Before you begin, ensure you have installed:
    Example:
    ```bash
     VITE_SERVER_API=backend-uri
+   ```
+
+## Usage
+
+To use the Sports Goods Store project effectively, follow these instructions:
+
+1. **Start the backend server:**
+
+   Ensure MongoDB is running and start the backend server using the following command:
+
+   ```bash
+   npm run start:dev   # or yarn start:dev
+   ```
+
+2. **Start the frontend development server:**
+
+   Open a new terminal window, navigate to the project directory, and start the frontend development server:
+
+   ```bash
+   npm run dev
    ```
