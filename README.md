@@ -8,6 +8,10 @@ Welcome to the Fantasy Sports project! This repository contains the source code 
 
 The Fantasy Sports is an e-commerce platform designed to cater to athletes, sports enthusiasts, and fitness aficionados. It offers a diverse selection of high-quality sports equipment, apparel, and accessories. The platform enables users to browse, search, and purchase products conveniently online.
 
+### Live URL
+
+[Live URL](https://bekreta.vercel.app "Visit the live application")
+
 ## Features
 
 - **Product Categories:** Browse products categorized by sports types such as soccer, basketball, tennis, and more.
